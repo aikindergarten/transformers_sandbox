@@ -10,8 +10,38 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: module name here
+      title: Core
       url: core.html
+    - output: web,pdf
+      title: Layers
+      url: layers.html
+    - output: web,pdf
+      title: 'Attention Modules '
+      url: attention.html
+    - output: web,pdf
+      title: Standard Transformer
+      url: transformer.html
+    - output: web,pdf
+      title: Reformer
+      url: reformer.html
+    - output: web,pdf
+      title: Tokenizers
+      url: tokenizers.html
+    - output: web,pdf
+      title: Data utils
+      url: data.html
+    - output: web,pdf
+      title: Metrics
+      url: metrics.html
+    - output: web,pdf
+      title: Optimizers
+      url: optimizers.html
+    - output: web,pdf
+      title: Tracking
+      url: tracking.html
+    - output: web,pdf
+      title: Experiment Configs
+      url: config.html
     output: web
     title: transformers_sandbox
   output: web
