@@ -1,6 +1,16 @@
 {
   "transformers_sandbox": {
     "Overview": "/",
-    "module name here": "core.html"
+    "Core": "core.html",
+    "Layers": "layers.html",
+    "Attention Modules ": "attention.html",
+    "Standard Transformer": "transformer.html",
+    "Reformer": "reformer.html",
+    "Tokenizers": "tokenizers.html",
+    "Data utils": "data.html",
+    "Metrics": "metrics.html",
+    "Optimizers": "optimizers.html",
+    "Tracking": "tracking.html",
+    "Experiment Configs": "config.html"
   }
 }

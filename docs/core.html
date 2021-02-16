@@ -1,13 +1,13 @@
 ---
 
-title: module name here
+title: Core
 
 
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "API details."
-description: "API details."
+summary: "Basic healper functions"
+description: "Basic healper functions"
 nb_path: "nbs/00_core.ipynb"
 ---
 <!--
@@ -22,6 +22,1154 @@ nb_path: "nbs/00_core.ipynb"
 
 <div class="container" id="notebook-container">
         
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Helper-functions">Helper functions<a class="anchor-link" href="#Helper-functions"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="General-purpose-utils">General purpose utils<a class="anchor-link" href="#General-purpose-utils"> </a></h3>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="exists" class="doc_header"><code>exists</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L31" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>exists</code>(<strong><code>val</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="default" class="doc_header"><code>default</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>default</code>(<strong><code>val</code></strong>, <strong><code>d</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="expand_dim1" class="doc_header"><code>expand_dim1</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>expand_dim1</code>(<strong><code>x</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="max_neg_value" class="doc_header"><code>max_neg_value</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L44" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>max_neg_value</code>(<strong><code>tensor</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="setattr_on" class="doc_header"><code>setattr_on</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>setattr_on</code>(<strong><code>model</code></strong>, <strong><code>attr</code></strong>, <strong><code>val</code></strong>, <strong><code>module_class</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Generative-utils">Generative utils<a class="anchor-link" href="#Generative-utils"> </a></h3>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="top_p_filter" class="doc_header"><code>top_p_filter</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L56" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>top_p_filter</code>(<strong><code>logits</code></strong>, <strong><code>top_p</code></strong>=<em><code>0.9</code></em>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="top_k_filter" class="doc_header"><code>top_k_filter</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L70" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>top_k_filter</code>(<strong><code>logits</code></strong>, <strong><code>top_k</code></strong>=<em><code>20</code></em>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="LSH-specific-helpers">LSH specific helpers<a class="anchor-link" href="#LSH-specific-helpers"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>From <a href="https://github.com/lucidrains/reformer-pytorch/">lucidrains/reformer-pytorch</a>.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="cache_method_decorator" class="doc_header"><code>cache_method_decorator</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L82" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>cache_method_decorator</code>(<strong><code>cache_attr</code></strong>, <strong><code>cache_namespace</code></strong>, <strong><code>reexecute</code></strong>=<em><code>False</code></em>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cache_method_decorator</span><span class="p">(</span><span class="n">cache_attr</span><span class="p">,</span> <span class="n">cache_namespace</span><span class="p">,</span> <span class="n">reexecute</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">inner_fn</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
+        <span class="nd">@wraps</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">key_namespace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fetch</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">set_cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">namespace_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">default</span><span class="p">(</span><span class="n">key_namespace</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
+            <span class="n">_cache</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cache_attr</span><span class="p">)</span>
+            <span class="n">_keyname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">cache_namespace</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">namespace_str</span><span class="si">}</span><span class="s1">&#39;</span>
+
+            <span class="k">if</span> <span class="n">fetch</span><span class="p">:</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">_cache</span><span class="p">[</span><span class="n">_keyname</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">reexecute</span><span class="p">:</span>
+                    <span class="n">fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">set_cache</span><span class="p">:</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cache_attr</span><span class="p">,</span> <span class="p">{</span><span class="o">**</span><span class="n">_cache</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="n">_keyname</span><span class="p">:</span> <span class="n">val</span><span class="p">}})</span>
+            <span class="k">return</span> <span class="n">val</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+    <span class="k">return</span> <span class="n">inner_fn</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="look_one_back" class="doc_header"><code>look_one_back</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L103" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>look_one_back</code>(<strong><code>x</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">look_one_back</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x_extra</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">x</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">:,</span> <span class="o">...</span><span class="p">],</span> <span class="n">x</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">...</span><span class="p">]],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">x_extra</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="chunked_sum" class="doc_header"><code>chunked_sum</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L108" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>chunked_sum</code>(<strong><code>tensor</code></strong>, <strong><code>chunks</code></strong>=<em><code>1</code></em>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">chunked_sum</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="o">*</span><span class="n">orig_size</span><span class="p">,</span> <span class="n">last_dim</span> <span class="o">=</span> <span class="n">tensor</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">tensor</span> <span class="o">=</span> <span class="n">tensor</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">last_dim</span><span class="p">)</span>
+    <span class="n">summed_tensors</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">tensor</span><span class="o">.</span><span class="n">chunk</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">summed_tensors</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">orig_size</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="sort_key_val" class="doc_header"><code>sort_key_val</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L115" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>sort_key_val</code>(<strong><code>t1</code></strong>, <strong><code>t2</code></strong>, <strong><code>dim</code></strong>=<em><code>-1</code></em>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sort_key_val</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">values</span><span class="p">,</span> <span class="n">indices</span> <span class="o">=</span> <span class="n">t1</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">t2</span><span class="o">.</span><span class="n">expand_as</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">values</span><span class="p">,</span> <span class="n">t2</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">indices</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="batched_index_select" class="doc_header"><code>batched_index_select</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L121" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>batched_index_select</code>(<strong><code>values</code></strong>, <strong><code>indices</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">batched_index_select</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">indices</span><span class="p">):</span>
+    <span class="n">last_dim</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">values</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">indices</span><span class="p">[:,</span> <span class="p">:,</span> <span class="kc">None</span><span class="p">]</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">last_dim</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Profiling-functions">Profiling functions<a class="anchor-link" href="#Profiling-functions"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Utility functions to assess model performance. Test functions with <code>mod</code> and input <code>x</code>.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mod</span> <span class="o">=</span> <span class="n">get_text_classifier</span><span class="p">(</span><span class="n">AWD_LSTM</span><span class="p">,</span> <span class="n">vocab_sz</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span> <span class="n">n_class</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">72</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="do_cuda_timing" class="doc_header"><code>do_cuda_timing</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L126" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>do_cuda_timing</code>(<strong><code>f</code></strong>, <strong><code>inp</code></strong>, <strong><code>context</code></strong>=<em><code>None</code></em>, <strong><code>n_loops</code></strong>=<em><code>100</code></em>)</p>
+</blockquote>
+<p>Get timings of cuda modules. Note <code>self_cpu_time_total</code> is returned, but
+from experiments this appears to be similar/same to the total CUDA time</p>
+<p>f :  function to profile, typically an nn.Module
+inp : required input to f
+context : optional additional input into f, used for Decoder-style modules</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="model_performance" class="doc_header"><code>model_performance</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L151" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>model_performance</code>(<strong><code>n_loops</code></strong>=<em><code>5</code></em>, <strong><code>model</code></strong>=<em><code>'arto'</code></em>, <strong><code>dls</code></strong>=<em><code>None</code></em>, <strong><code>n_epochs</code></strong>=<em><code>1</code></em>, <strong><code>lr</code></strong>=<em><code>0.0005</code></em>)</p>
+</blockquote>
+<p>DEMO CODE ONLY!
+Run training loop to measure timings. Note that the models internally
+should be changed depending on the model you would like to use.
+You should also adjust the metrics you are monitoring</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="total_params" class="doc_header"><code>total_params</code><a href="https://github.com/fastai/fastai/tree/master/fastai/callback/hook.py#L138" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>total_params</code>(<strong><code>m</code></strong>)</p>
+</blockquote>
+<p>Give the number of parameters of a module and if it's trainable or not</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Number of params for our test model:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">total_params</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(24336280, True)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Translation-Callbacks">Translation Callbacks<a class="anchor-link" href="#Translation-Callbacks"> </a></h2><p>Callbacks used to ensuring training a translation model works. All 3 are needed</p>
+<p>See <a href="https://github.com/bentrevett/pytorch-seq2seq/blob/master/6%20-%20Attention%20is%20All%20You%20Need.ipynb">notebook here</a> for explanation of EOS shifting</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="CombineInputOutputCallback" class="doc_header"><code>class</code> <code>CombineInputOutputCallback</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L189" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CombineInputOutputCallback</code>() :: <code>Callback</code></p>
+</blockquote>
+<p>Callback to combine the source (self.xb) and target (self.yb) into self.xb</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">CombineInputOutputCallback</span><span class="p">(</span><span class="n">Callback</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Callback to combine the source (self.xb) and target (self.yb) into self.xb</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">before_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">xb</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">yb</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">AssertAndCancelFit</span><span class="p">(</span><span class="n">Callback</span><span class="p">):</span>
+    <span class="s2">&quot;Cancels batch after backward to avoid opt.step()&quot;</span>
+    <span class="k">def</span> <span class="nf">before_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">xb</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">xb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="bp">self</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">yb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">raise</span> <span class="n">CancelEpochException</span><span class="p">()</span>
+
+<span class="n">learn</span> <span class="o">=</span> <span class="n">synth_learner</span><span class="p">(</span><span class="n">cbs</span><span class="o">=</span><span class="p">[</span><span class="n">CombineInputOutputCallback</span><span class="p">(),</span> <span class="n">AssertAndCancelFit</span><span class="p">()])</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>00:00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="RemoveEOSCallback" class="doc_header"><code>class</code> <code>RemoveEOSCallback</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L198" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>RemoveEOSCallback</code>(<strong><code>eos_idx</code></strong>) :: <code>Callback</code></p>
+</blockquote>
+<p>Shift the target presented to the model during training to remove the "eos" token as
+we don't want the model to learn to translate EOS when it sees EOS.</p>
+<p>In practice we actually mask the EOS token as due to batching the last token will often be a <pad> token,
+not EOS</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">RemoveEOSCallback</span><span class="p">(</span><span class="n">Callback</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Shift the target presented to the model during training to remove the &quot;eos&quot; token as </span>
+<span class="sd">        we don&#39;t want the model to learn to translate EOS when it sees EOS.</span>
+<span class="sd">        </span>
+<span class="sd">        In practice we actually mask the EOS token as due to batching the last token will often be a &lt;pad&gt; token,</span>
+<span class="sd">        not EOS</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">eos_idx</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">eos_idx</span><span class="o">=</span><span class="n">eos_idx</span>
+    <span class="k">def</span> <span class="nf">before_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        
+        <span class="n">eos_mask</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">xb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">!=</span><span class="bp">self</span><span class="o">.</span><span class="n">eos_idx</span><span class="p">)</span>
+        <span class="n">sz</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">xb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+        <span class="n">sz</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">sz</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">xb</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">xb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">xb</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">eos_mask</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">((</span><span class="n">sz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">sz</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="LossTargetShiftCallback" class="doc_header"><code>class</code> <code>LossTargetShiftCallback</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L214" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>LossTargetShiftCallback</code>() :: <code>Callback</code></p>
+</blockquote>
+<p>Shift the target shown to the loss to exclude the "bos" token as the first token we want predicted
+should be an actual word, not the "bos" token (as we have already given the model "bos" )</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">LossTargetShiftCallback</span><span class="p">(</span><span class="n">Callback</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Shift the target shown to the loss to exclude the &quot;bos&quot; token as the first token we want predicted</span>
+<span class="sd">        should be an actual word, not the &quot;bos&quot; token (as we have already given the model &quot;bos&quot; )</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">after_pred</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">yb</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">yb</span><span class="p">[</span><span class="mi">0</span><span class="p">][:,</span><span class="mi">1</span><span class="p">:],)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">TestLossShiftAndCancelFit</span><span class="p">(</span><span class="n">Callback</span><span class="p">):</span>
+    <span class="s2">&quot;Cancels batch after backward to avoid opt.step()&quot;</span>
+    <span class="k">def</span> <span class="nf">after_pred</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>      
+        <span class="n">o</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">dls</span><span class="o">.</span><span class="n">one_batch</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">yb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">o</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">raise</span> <span class="n">CancelEpochException</span><span class="p">()</span>
+
+<span class="n">learn</span> <span class="o">=</span> <span class="n">synth_learner</span><span class="p">(</span><span class="n">cbs</span><span class="o">=</span><span class="p">[</span><span class="n">LossTargetShiftCallback</span><span class="p">(),</span> <span class="n">TestLossShiftAndCancelFit</span><span class="p">()])</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>00:00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="PadBatchCallback" class="doc_header"><code>class</code> <code>PadBatchCallback</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L224" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>PadBatchCallback</code>(<strong><code>bucket_size</code></strong>:<code>int</code>=<em><code>64</code></em>, <strong><code>val</code></strong>:<code>int</code>=<em><code>0</code></em>, <strong><code>y_val</code></strong>:<code>int</code>=<em><code>-100</code></em>) :: <code>Callback</code></p>
+</blockquote>
+<p>Pads input and target sequences to multiple of 2*bucket_size</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Translation-Transform">Translation Transform<a class="anchor-link" href="#Translation-Transform"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="AddEOSID" class="doc_header"><code>class</code> <code>AddEOSID</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L237" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AddEOSID</code>(<strong><code>eos_id</code></strong>, <strong><code>keep_size</code></strong>=<em><code>True</code></em>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">input_ids</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">add_eos</span> <span class="o">=</span> <span class="n">AddEOSID</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">add_eos</span><span class="p">(</span><span class="n">input_ids</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>LMTensorText([1, 2, 3, 0])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Loss-functions">Loss functions<a class="anchor-link" href="#Loss-functions"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="LabelSmoothingCrossEntropy" class="doc_header"><code>class</code> <code>LabelSmoothingCrossEntropy</code><a href="https://github.com/fastai/fastai/tree/master/fastai/losses.py#L81" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>LabelSmoothingCrossEntropy</code>(<strong><code>eps</code></strong>:<code>float</code>=<em><code>0.1</code></em>, <strong><code>weight</code></strong>=<em><code>None</code></em>, <strong><code>reduction</code></strong>=<em><code>'mean'</code></em>) :: <code>Module</code></p>
+</blockquote>
+<p>Same as <code>nn.Module</code>, but no need for subclasses to call <code>super().__init__</code></p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="LabelSmoothingCrossEntropyFlat" class="doc_header"><code>class</code> <code>LabelSmoothingCrossEntropyFlat</code><a href="https://github.com/fastai/fastai/tree/master/fastai/losses.py#L100" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>LabelSmoothingCrossEntropyFlat</code>(<strong>*<code>args</code></strong>, <strong><code>axis</code></strong>=<em><code>-1</code></em>, <strong><code>eps</code></strong>=<em><code>0.1</code></em>, <strong><code>reduction</code></strong>=<em><code>'mean'</code></em>, <strong><code>flatten</code></strong>=<em><code>True</code></em>, <strong><code>floatify</code></strong>=<em><code>False</code></em>, <strong><code>is_2d</code></strong>=<em><code>True</code></em>) :: <code>BaseLoss</code></p>
+</blockquote>
+<p>Same as <a href="/transformers_sandbox/core.html#LabelSmoothingCrossEntropy"><code>LabelSmoothingCrossEntropy</code></a>, but flattens input and target.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bs</span><span class="o">=</span><span class="mi">4</span>
+<span class="n">sl</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">v</span><span class="o">=</span><span class="mi">32</span>
+<span class="n">pred</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">bs</span><span class="p">,</span> <span class="n">sl</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">targ</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="p">(</span><span class="n">bs</span><span class="p">,</span><span class="n">sl</span><span class="p">))</span>
+<span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">triu_indices</span><span class="p">(</span><span class="n">bs</span><span class="p">,</span> <span class="n">sl</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="p">(</span><span class="n">sl</span><span class="o">-</span><span class="n">bs</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">targ</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">loss_func</span> <span class="o">=</span> <span class="n">LabelSmoothingCrossEntropyFlat</span><span class="p">(</span><span class="n">ignore_index</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="n">loss_func</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">targ</span><span class="p">)</span>
+<span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="k">assert</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">pred</span><span class="o">.</span><span class="n">grad</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">targ</span><span class="o">==-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Distributed">Distributed<a class="anchor-link" href="#Distributed"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="Learner.distrib_ctx" class="doc_header"><code>Learner.distrib_ctx</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/core.py#L281" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Learner.distrib_ctx</code>(<strong><code>cuda_id</code></strong>=<em><code>None</code></em>, <strong><code>sync_bn</code></strong>=<em><code>True</code></em>)</p>
+</blockquote>
+<p>A context manager to adapt a learner to train in distributed data parallel mode.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
