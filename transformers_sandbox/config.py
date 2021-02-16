@@ -7,9 +7,9 @@ __all__ = ['update_sig', 'ConfigBase', 'SyntheticConfig', 'TransformerLMConfigEn
 from fastcore.all import *
 from fastai.basics import *
 
-from reformer_fastai.core import *
-from reformer_fastai.transformer import *
-from reformer_fastai.reformer import *
+from .core import *
+from .transformer import *
+from .reformer import *
 
 import json
 from inspect import signature, Parameter

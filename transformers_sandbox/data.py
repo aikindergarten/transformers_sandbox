@@ -7,7 +7,7 @@ __all__ = ['read_lines', 'convert_data_to_seq_length', 'read_and_prepare_data', 
 # Imports for data functions
 import pandas as pd
 import os
-from reformer_fastai.tokenizers import ByteTextTokenizer
+from .tokenizers import ByteTextTokenizer
 from fastai.text.all import *
 from torch.utils.data import Dataset
 import time

@@ -6,10 +6,10 @@ __all__ = ['LMMixin', 'EncDecMixin', 'TransformerEncoderBlock', 'TransformerEnco
 
 # Cell
 from fastai.basics import *
-from reformer_fastai.core import *
-from reformer_fastai.core import _sampler
-from reformer_fastai.layers import *
-from reformer_fastai.attention import *
+from .core import *
+from .core import _sampler
+from .layers import *
+from .attention import *
 
 # Cell
 class LMMixin:

@@ -23,7 +23,7 @@ try:
 except ImportError as e:
     print(e)
 
-from reformer_fastai.core import *
+from .core import *
 
 # Cell
 class Residual(Module):

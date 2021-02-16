@@ -21,8 +21,8 @@ from typing import Tuple
 
 from einops import rearrange, repeat
 
-from reformer_fastai.core import *
-from reformer_fastai.layers import *
+from .core import *
+from .layers import *
 
 from torch.utils.checkpoint import *
 

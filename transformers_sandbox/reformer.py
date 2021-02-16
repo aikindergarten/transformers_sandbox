@@ -11,10 +11,10 @@ from torch.utils.checkpoint import get_device_states, set_device_states
 from functools import wraps
 
 from fastai.basics import *
-from reformer_fastai.core import *
-from reformer_fastai.layers import *
-from reformer_fastai.attention import *
-from reformer_fastai.transformer import LMMixin, EncDecMixin
+from .core import *
+from .layers import *
+from .attention import *
+from .transformer import LMMixin, EncDecMixin
 
 # Cell
 class Chunk(Module):
