@@ -677,13 +677,13 @@ class LSHEncoderBlock(Module):
                  seed:int=None):
         store_attr('attn_dropout') # mb separate argument attn_post_dropout
         if prenorm:
-            self.attn = Residual(PreNorm(d_model, ReformerAttentionV2(d_model, n_heads=n_heads, causal=causal,
+            self.attn = Residual(PreNorm(d_model, ReformerAttention(d_model, n_heads=n_heads, causal=causal,
                                                     dropout=attn_dropout, bias=attn_bias, use_lsh=use_lsh,
                                                     n_hashes=n_hashes, bucket_size=bucket_size,
                                                     seed=seed)))
             self.ff = Residual(PreNorm(d_model, FeedForward(d_model, d_ff=d_ff, dropout=ff_dropout)))
         else:
-            self.attn = PostNorm(d_model, Residual(ReformerAttentionV2(d_model, n_heads=n_heads, causal=causal,
+            self.attn = PostNorm(d_model, Residual(ReformerAttention(d_model, n_heads=n_heads, causal=causal,
                                                     dropout=attn_dropout, bias=attn_bias, use_lsh=use_lsh,
                                                     n_hashes=n_hashes, bucket_size=bucket_size,
                                                     seed=seed)))
@@ -849,9 +849,9 @@ class ReformerEncoder(Module):
         blocks = []
         norm_wrapper = PreNorm if prenorm else PostNorm
         for ind in range(n_layers):
-            attn = ReformerAttentionV2(d_model, n_heads=n_heads, causal=causal, dropout=attn_dropout,
-                                       bias=attn_bias, use_lsh=use_lsh, n_hashes=n_hashes, bucket_size=bucket_size,
-                                       seed=seed)
+            attn = ReformerAttention(d_model, n_heads=n_heads, causal=causal, dropout=attn_dropout,
+                                    bias=attn_bias, use_lsh=use_lsh, n_hashes=n_hashes, bucket_size=bucket_size,
+                                    seed=seed)
             ff = ChunkedFeedForward(d_model, d_ff, n_chunks=ff_chunks, dropout=ff_dropout, dim=1)
 
             f = norm_wrapper(d_model, attn)

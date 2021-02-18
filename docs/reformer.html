@@ -1560,7 +1560,7 @@ Parameters:</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>299 ms ± 23.7 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>318 ms ± 23 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -1594,7 +1594,7 @@ Parameters:</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>7.62 ms ± 974 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<pre>8.17 ms ± 523 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre>
 </div>
 </div>
@@ -1810,15 +1810,15 @@ Parameters:</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;buckets:0&#39;: tensor([[ 1,  0,  0,  ..., 15, 14, 14],
-        [ 1,  1,  0,  ..., 15, 14, 14],
-        [ 0,  1,  0,  ..., 15, 14, 14],
-        [ 1,  1,  0,  ..., 14, 15, 14]])}
+<pre>{&#39;buckets:0&#39;: tensor([[ 1,  1,  0,  ..., 14, 14, 14],
+        [ 1,  1,  0,  ..., 14, 14, 15],
+        [ 1,  1,  0,  ..., 14, 14, 15],
+        [ 1,  1,  0,  ..., 14, 14, 14]])}
 torch.Size([4, 1024])
-{&#39;buckets:1&#39;: tensor([[ 0,  1,  1,  ..., 14, 15, 15],
-        [ 0,  1,  0,  ..., 14, 15, 14],
-        [ 1,  1,  0,  ..., 14, 15, 14],
-        [ 1,  1,  0,  ..., 14, 15, 14]])}
+{&#39;buckets:1&#39;: tensor([[ 1,  1,  0,  ..., 15, 15, 15],
+        [ 0,  0,  0,  ..., 15, 15, 14],
+        [ 0,  1,  1,  ..., 14, 15, 14],
+        [ 0,  1,  1,  ..., 15, 15, 15]])}
 torch.Size([4, 1024])
 </pre>
 </div>
@@ -1859,7 +1859,7 @@ torch.Size([4, 1024])
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Number of hashing rounds 8
-307 ms ± 29 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+280 ms ± 15.6 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -1893,7 +1893,7 @@ torch.Size([4, 1024])
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Number of hashing rounds 1
-74 ms ± 1.84 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+85.2 ms ± 5.25 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre>
 </div>
 </div>

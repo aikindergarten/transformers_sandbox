@@ -10,14 +10,13 @@ import torch.nn.functional as F
 from fastai.basics import *
 from fastai.text.all import *
 
-from functools import partial, reduce, wraps
+from functools import reduce
 from operator import mul
 import math
 
 from torch import Tensor
 from typing import Tuple
 
-from einops import rearrange, repeat
 try:
     from axial_positional_embedding import AxialPositionalEmbedding, AxialPositionalEmbeddingImage
 except ImportError as e:
@@ -59,12 +58,16 @@ class FeedForward(Module):
     """
     Simple positional feed-forward module with GELU activation function.
     If d_ff is None defaults to 4*d_model
+    Initialized with `xavier_uniform`
     """
     def __init__(self, d_model:int, d_ff:int=None, dropout:float=0.):
         d_ff = default(d_ff, 4 * d_model)
-        layers = [nn.Linear(d_model, d_ff), nn.GELU(), nn.Dropout(dropout),
-                    nn.Linear(d_ff, d_model), nn.Dropout(dropout)]
-        self.net = nn.Sequential(*layers)
+        layers = OrderedDict([('fc1', nn.Linear(d_model, d_ff)),
+                              ('act', nn.GELU()),
+                              ('drop1', nn.Dropout(dropout)),
+                              ('fc2', nn.Linear(d_ff, d_model)),
+                              ('drop2', nn.Dropout(dropout))])
+        self.net = nn.Sequential(layers)
         self._init()
 
     def forward(self, x):
