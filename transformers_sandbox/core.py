@@ -2,8 +2,8 @@
 
 __all__ = ['exists', 'default', 'expand_dim1', 'max_neg_value', 'setattr_on', 'top_p_filter', 'top_k_filter',
            'cache_method_decorator', 'look_one_back', 'chunked_sum', 'sort_key_val', 'batched_index_select',
-           'do_cuda_timing', 'model_performance', 'total_params', 'CombineInputOutputCallback', 'RemoveEOSCallback',
-           'LossTargetShiftCallback', 'PadBatchCallback', 'AddEOSID', 'LabelSmoothingCrossEntropy',
+           'do_cuda_timing', 'model_performance', 'total_params', 'ModelParams', 'CombineInputOutputCallback',
+           'RemoveEOSCallback', 'LossTargetShiftCallback', 'PadBatchCallback', 'AddEOSID', 'LabelSmoothingCrossEntropy',
            'LabelSmoothingCrossEntropyFlat']
 
 # Cell
@@ -18,6 +18,7 @@ from fastai.text.all import *
 from fastai.test_utils import *
 
 from functools import partial, reduce, wraps
+from collections import namedtuple
 from inspect import isfunction
 from operator import mul
 from copy import deepcopy
@@ -133,14 +134,13 @@ def do_cuda_timing(f, inp, context=None, n_loops=100):
         context : optional additional input into f, used for Decoder-style modules
     '''
     f.cuda()
-    inp = inp.cuda()
-    if context is not None: context = context.cuda()
+    args = (inp.cuda(),)
+    if exists(context): args += (context.cuda(),)
     with profiler.profile(record_shapes=False, use_cuda=True) as prof:
         with profiler.record_function("model_inference"):
             with torch.no_grad():
                 for _ in range(n_loops):
-                    if context is None: f(inp)
-                    else: f(inp, context)
+                    f(*args)
                     torch.cuda.synchronize()
 
     res = round((prof.key_averages().self_cpu_time_total / 1000) / n_loops, 3)
@@ -176,14 +176,15 @@ def model_performance(n_loops=5, model='arto', dls=None, n_epochs=1, lr=5e-4):
     return learn, acc_ls, ppl_ls
 
 # Cell
+ModelParams = namedtuple('ModelParams', ['trainable', 'nontrainable'])
+
 def total_params(m):
     """
-    Give the number of parameters of a module and if it's trainable or not
-    - Taken from Taken from fastai.callback.hook
+    Return named tupel with number of trainable and nontrainable parameters
     """
-    params = sum([p.numel() for p in m.parameters()])
-    trains = [p.requires_grad for p in m.parameters()]
-    return params, (False if len(trains)==0 else trains[0])
+    n_trainable_params = sum([p.numel() for p in m.parameters() if p.requires_grad])
+    n_nontrainable_params = sum([p.numel() for p in m.parameters() if not p.requires_grad])
+    return ModelParams(n_trainable_params, n_nontrainable_params)
 
 # Cell
 class CombineInputOutputCallback(Callback):
