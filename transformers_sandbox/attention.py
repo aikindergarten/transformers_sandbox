@@ -3,7 +3,7 @@
 __all__ = ['MASK_VAL', 'SELF_ATTN_MASK_VAL', 'AttnInProj', 'AttnInProjV2', 'SharedQKAttnInProj',
            'ScaledDotProdAttention', 'Attention', 'MemEfficientAttention', 'ChunkedDotProdAttention',
            'ChunkedAttention', 'AdditiveInProj', 'AdditiveAttention', 'LSHAttention', 'LSHSelfAttention',
-           'ReformerAttention', 'ReformerAttentionV2']
+           'ReformerAttention']
 
 # Cell
 import torch
@@ -707,59 +707,6 @@ class LSHSelfAttention(Module):
 
 # Cell
 class ReformerAttention(Module):
-    """
-    Reformer attention container.
-
-    Switch between FullSharedQKAttention and LSHAttention.
-    """
-    def __init__(self,
-                 d_model:int,
-                 n_heads:int = 8,
-                 causal:bool = False,
-                 mask:Tensor = None,
-                 dropout:float=0.1,
-                 out_dropout:float=None,
-                 bias:bool=False,
-                 store_attention:bool=False,
-                 lsh_attention:bool = True,
-                 n_hashes:int = 8,
-                 bucket_size:int = 64):
-
-        store_attr('causal, mask, n_heads, bias, lsh_attention')
-
-        out_dropout = ifnone(out_dropout, dropout)
-
-        if lsh_attention:
-            self.attn = LSHSelfAttention(d_model,
-                                         n_heads = n_heads,
-                                         bucket_size=bucket_size,
-                                         n_hashes=n_hashes,
-                                         causal=causal,
-                                         dropout=dropout,
-                                         return_attn=store_attention)
-
-        else: self.attn = Attention(d_model,
-                                    n_heads,
-                                    causal=causal,
-                                    shared_qk=True,
-                                    dropout=dropout,
-                                    store_attention=store_attention)
-
-        self.dropout = nn.Dropout(out_dropout)
-        self._init()
-
-    def forward(self, x, context = None, mask = None, context_mask = None):
-
-        out = self.attn(x, mask, context_mask)
-        return self.dropout(out)
-
-    def _init(self):
-        [nn.init.xavier_uniform_(w) for w in self.parameters() if w.dim()>1]
-        if self.bias:
-            [nn.init.constant_(b, 0) for b in self.parameters() if b.dim()==1]
-
-# Cell
-class ReformerAttentionV2(Module):
     """
     Reformer attention container. Take on making it switchable on the fly.
 
