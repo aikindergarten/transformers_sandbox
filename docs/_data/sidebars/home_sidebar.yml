@@ -20,10 +20,13 @@ entries:
       url: attention.html
     - output: web,pdf
       title: Standard Transformer
-      url: transformer.html
+      url: models.transformer.html
     - output: web,pdf
       title: Reformer
-      url: reformer.html
+      url: models.reformer.html
+    - output: web,pdf
+      title: XTransformer
+      url: models.xtransformer.html
     - output: web,pdf
       title: Tokenizers
       url: tokenizers.html
