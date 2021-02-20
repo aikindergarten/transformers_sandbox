@@ -53,7 +53,7 @@ nb_path: "nbs/04x_models.xtransformer.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="wrap_sublayer" class="doc_header"><code>wrap_sublayer</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L14" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>wrap_sublayer</code>(<strong><code>sublayer</code></strong>:<code>Module</code>, <strong><code>method</code></strong>:<code>str</code>, <strong><code>d_model</code></strong>)</p>
+<h4 id="wrap_sublayer" class="doc_header"><code>wrap_sublayer</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L15" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>wrap_sublayer</code>(<strong><code>sublayer</code></strong>:<code>Module</code>, <strong><code>method</code></strong>:<code>str</code>, <strong><code>d_model</code></strong>)</p>
 </blockquote>
 <p>Wraps a sublayer with skip connection defined by method
 currently supported:</p>
@@ -106,7 +106,7 @@ currently supported:</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="XEncoderBlock" class="doc_header"><code>class</code> <code>XEncoderBlock</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L33" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>XEncoderBlock</code>(<strong><code>d_model</code></strong>:<code>int</code>, <strong><code>n_heads</code></strong>:<code>int</code>=<em><code>8</code></em>, <strong><code>d_ff</code></strong>:<code>int</code>=<em><code>None</code></em>, <strong><code>attn_dropout</code></strong>:<code>float</code>=<em><code>0.1</code></em>, <strong><code>ff_dropout</code></strong>:<code>float</code>=<em><code>0.1</code></em>, <strong><code>causal</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>attn_bias</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>residual_type</code></strong>:<code>str</code>=<em><code>'postnorm'</code></em>, <strong><code>shared_qk</code></strong>:<code>bool</code>=<em><code>False</code></em>) :: <code>Module</code></p>
+<h2 id="XEncoderBlock" class="doc_header"><code>class</code> <code>XEncoderBlock</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L34" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>XEncoderBlock</code>(<strong><code>d_model</code></strong>:<code>int</code>, <strong><code>n_heads</code></strong>:<code>int</code>=<em><code>8</code></em>, <strong><code>attn_module</code></strong>:<code>Module</code>=<em><code>Attention</code></em>, <strong><code>ff_module</code></strong>:<code>Module</code>=<em><code>FeedForward</code></em>, <strong><code>d_ff</code></strong>:<code>int</code>=<em><code>None</code></em>, <strong><code>attn_dropout</code></strong>:<code>float</code>=<em><code>0.1</code></em>, <strong><code>ff_dropout</code></strong>:<code>float</code>=<em><code>0.1</code></em>, <strong><code>causal</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>attn_bias</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>residual_type</code></strong>:<code>str</code>=<em><code>'postnorm'</code></em>, <strong><code>shared_qk</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong>**<code>kwargs</code></strong>) :: <code>Module</code></p>
 </blockquote>
 <p>Experimental encoder block</p>
 
@@ -178,7 +178,7 @@ currently supported:</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="XEncoder" class="doc_header"><code>class</code> <code>XEncoder</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L58" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>XEncoder</code>(<strong><code>d_model</code></strong>, <strong><code>n_layers</code></strong>=<em><code>6</code></em>, <strong><code>n_heads</code></strong>=<em><code>8</code></em>, <strong><code>d_ff</code></strong>=<em><code>None</code></em>, <strong><code>ff_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>attn_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>attn_bias</code></strong>=<em><code>False</code></em>, <strong><code>causal</code></strong>=<em><code>False</code></em>, <strong><code>residual_type</code></strong>:<code>str</code>=<em><code>'postnorm'</code></em>, <strong><code>shared_qk</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>final_norm</code></strong>=<em><code>None</code></em>) :: <code>Module</code></p>
+<h2 id="XEncoder" class="doc_header"><code>class</code> <code>XEncoder</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L62" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>XEncoder</code>(<strong><code>d_model</code></strong>, <strong><code>n_layers</code></strong>=<em><code>6</code></em>, <strong><code>n_heads</code></strong>=<em><code>8</code></em>, <strong><code>d_ff</code></strong>=<em><code>None</code></em>, <strong><code>ff_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>attn_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>attn_bias</code></strong>=<em><code>False</code></em>, <strong><code>causal</code></strong>=<em><code>False</code></em>, <strong><code>residual_type</code></strong>:<code>str</code>=<em><code>'postnorm'</code></em>, <strong><code>shared_qk</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>final_norm</code></strong>=<em><code>None</code></em>, <strong>**<code>kwargs</code></strong>) :: <code>Module</code></p>
 </blockquote>
 <p>Stack of XEncoderBlocks</p>
 
@@ -253,7 +253,7 @@ currently supported:</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="XDecoderBlock" class="doc_header"><code>class</code> <code>XDecoderBlock</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L86" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>XDecoderBlock</code>(<strong><code>d_model</code></strong>, <strong><code>n_heads</code></strong>=<em><code>8</code></em>, <strong><code>d_ff</code></strong>=<em><code>None</code></em>, <strong><code>attn_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>ff_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>mask</code></strong>=<em><code>None</code></em>, <strong><code>attn_bias</code></strong>=<em><code>False</code></em>, <strong><code>residual_type</code></strong>=<em><code>'postnorm'</code></em>) :: <code>Module</code></p>
+<h2 id="XDecoderBlock" class="doc_header"><code>class</code> <code>XDecoderBlock</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L92" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>XDecoderBlock</code>(<strong><code>d_model</code></strong>, <strong><code>n_heads</code></strong>=<em><code>8</code></em>, <strong><code>d_ff</code></strong>=<em><code>None</code></em>, <strong><code>attn_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>ff_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>mask</code></strong>=<em><code>None</code></em>, <strong><code>attn_bias</code></strong>=<em><code>False</code></em>, <strong><code>residual_type</code></strong>=<em><code>'postnorm'</code></em>) :: <code>Module</code></p>
 </blockquote>
 <p>Standart transformer decoder block. Consist of self-attention, encoder-decoder attention
 and positiona feed-forward alyers</p>
@@ -286,7 +286,7 @@ and positiona feed-forward alyers</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="XDecoderBlockV2" class="doc_header"><code>class</code> <code>XDecoderBlockV2</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L114" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>XDecoderBlockV2</code>(<strong><code>d_model</code></strong>, <strong><code>n_heads</code></strong>=<em><code>8</code></em>, <strong><code>mask</code></strong>=<em><code>None</code></em>, <strong><code>d_ff</code></strong>=<em><code>None</code></em>, <strong><code>attn_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>ff_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>attn_bias</code></strong>=<em><code>False</code></em>, <strong><code>residual_type</code></strong>=<em><code>'postnorm'</code></em>) :: <code>Module</code></p>
+<h2 id="XDecoderBlockV2" class="doc_header"><code>class</code> <code>XDecoderBlockV2</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L120" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>XDecoderBlockV2</code>(<strong><code>d_model</code></strong>, <strong><code>n_heads</code></strong>=<em><code>8</code></em>, <strong><code>mask</code></strong>=<em><code>None</code></em>, <strong><code>d_ff</code></strong>=<em><code>None</code></em>, <strong><code>attn_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>ff_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>attn_bias</code></strong>=<em><code>False</code></em>, <strong><code>residual_type</code></strong>=<em><code>'postnorm'</code></em>) :: <code>Module</code></p>
 </blockquote>
 <p>Transformer decoder block using additive attention layer instead of self-attention
 followed by cross-attention</p>
@@ -319,7 +319,7 @@ followed by cross-attention</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="XDecoder" class="doc_header"><code>class</code> <code>XDecoder</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L137" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>XDecoder</code>(<strong><code>d_model</code></strong>, <strong><code>n_layers</code></strong>=<em><code>6</code></em>, <strong><code>n_heads</code></strong>=<em><code>8</code></em>, <strong><code>d_ff</code></strong>=<em><code>None</code></em>, <strong><code>attn_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>ff_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>residual_type</code></strong>=<em><code>'postnorm'</code></em>, <strong><code>comb_attn</code></strong>=<em><code>False</code></em>, <strong><code>attn_bias</code></strong>=<em><code>False</code></em>, <strong><code>final_norm</code></strong>=<em><code>None</code></em>) :: <code>Module</code></p>
+<h2 id="XDecoder" class="doc_header"><code>class</code> <code>XDecoder</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L143" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>XDecoder</code>(<strong><code>d_model</code></strong>, <strong><code>n_layers</code></strong>=<em><code>6</code></em>, <strong><code>n_heads</code></strong>=<em><code>8</code></em>, <strong><code>d_ff</code></strong>=<em><code>None</code></em>, <strong><code>attn_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>ff_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>residual_type</code></strong>=<em><code>'postnorm'</code></em>, <strong><code>comb_attn</code></strong>=<em><code>False</code></em>, <strong><code>attn_bias</code></strong>=<em><code>False</code></em>, <strong><code>final_norm</code></strong>=<em><code>None</code></em>) :: <code>Module</code></p>
 </blockquote>
 <p>Stack of TransformerDecoder layers</p>
 
@@ -401,7 +401,7 @@ followed by cross-attention</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="XTransformerLM" class="doc_header"><code>class</code> <code>XTransformerLM</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L165" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>XTransformerLM</code>(<strong><code>vocab_sz</code></strong>:<code>int</code>, <strong><code>d_model</code></strong>:<code>int</code>, <strong><code>n_layers</code></strong>:<code>int</code>=<em><code>6</code></em>, <strong><code>n_heads</code></strong>:<code>int</code>=<em><code>8</code></em>, <strong><code>d_ff</code></strong>:<code>int</code>=<em><code>None</code></em>, <strong><code>attn_dropout</code></strong>:<code>float</code>=<em><code>0.1</code></em>, <strong><code>ff_dropout</code></strong>:<code>float</code>=<em><code>0.1</code></em>, <strong><code>emb_dropout</code></strong>:<code>float</code>=<em><code>0.1</code></em>, <strong><code>tie_weights</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>causal</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>pos_enc</code></strong>:<code>str</code>=<em><code>'absolute'</code></em>, <strong><code>max_seq_len</code></strong>:<code>int</code>=<em><code>512</code></em>, <strong><code>axial_shape</code></strong>:<code>tuple</code>=<em><code>None</code></em>, <strong><code>axial_emb_dims</code></strong>:<code>tuple</code>=<em><code>None</code></em>, <strong><code>pad_idx</code></strong>:<code>int</code>=<em><code>None</code></em>, <strong><code>residual_type</code></strong>:<code>str</code>=<em><code>'postnorm'</code></em>, <strong><code>attn_bias</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>shared_qk</code></strong>:<code>bool</code>=<em><code>False</code></em>) :: <code>Module</code></p>
+<h2 id="XTransformerLM" class="doc_header"><code>class</code> <code>XTransformerLM</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L171" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>XTransformerLM</code>(<strong><code>vocab_sz</code></strong>:<code>int</code>, <strong><code>d_model</code></strong>:<code>int</code>, <strong><code>n_layers</code></strong>:<code>int</code>=<em><code>6</code></em>, <strong><code>n_heads</code></strong>:<code>int</code>=<em><code>8</code></em>, <strong><code>d_ff</code></strong>:<code>int</code>=<em><code>None</code></em>, <strong><code>attn_dropout</code></strong>:<code>float</code>=<em><code>0.1</code></em>, <strong><code>ff_dropout</code></strong>:<code>float</code>=<em><code>0.1</code></em>, <strong><code>emb_dropout</code></strong>:<code>float</code>=<em><code>0.1</code></em>, <strong><code>tie_weights</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>causal</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>pos_enc</code></strong>:<code>str</code>=<em><code>'absolute'</code></em>, <strong><code>max_seq_len</code></strong>:<code>int</code>=<em><code>512</code></em>, <strong><code>axial_shape</code></strong>:<code>tuple</code>=<em><code>None</code></em>, <strong><code>axial_emb_dims</code></strong>:<code>tuple</code>=<em><code>None</code></em>, <strong><code>pad_idx</code></strong>:<code>int</code>=<em><code>None</code></em>, <strong><code>residual_type</code></strong>:<code>str</code>=<em><code>'postnorm'</code></em>, <strong><code>attn_bias</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>shared_qk</code></strong>:<code>bool</code>=<em><code>False</code></em>) :: <code>Module</code></p>
 </blockquote>
 <p>Basic Transformer for language modelling</p>
 <p>Parameters:</p>
@@ -525,7 +525,7 @@ followed by cross-attention</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="XTransformer" class="doc_header"><code>class</code> <code>XTransformer</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L231" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>XTransformer</code>(<strong><code>enc_vocab_sz</code></strong>, <strong><code>dec_vocab_sz</code></strong>, <strong><code>d_model</code></strong>, <strong><code>n_enc_layers</code></strong>=<em><code>6</code></em>, <strong><code>n_dec_layers</code></strong>=<em><code>6</code></em>, <strong><code>n_heads</code></strong>=<em><code>8</code></em>, <strong><code>d_ff</code></strong>=<em><code>None</code></em>, <strong><code>pad_idx</code></strong>=<em><code>None</code></em>, <strong><code>tie_weights</code></strong>=<em><code>True</code></em>, <strong><code>shared_emb</code></strong>=<em><code>False</code></em>, <strong><code>attn_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>ff_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>emb_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>prenorm</code></strong>=<em><code>False</code></em>, <strong><code>attn_bias</code></strong>=<em><code>False</code></em>, <strong><code>comb_attn</code></strong>=<em><code>False</code></em>, <strong><code>pos_enc</code></strong>=<em><code>'absolute'</code></em>, <strong><code>max_seq_len</code></strong>=<em><code>512</code></em>, <strong><code>axial_shape</code></strong>=<em><code>None</code></em>, <strong><code>axial_emb_dims</code></strong>=<em><code>None</code></em>) :: <code>Module</code></p>
+<h2 id="XTransformer" class="doc_header"><code>class</code> <code>XTransformer</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L237" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>XTransformer</code>(<strong><code>enc_vocab_sz</code></strong>, <strong><code>dec_vocab_sz</code></strong>, <strong><code>d_model</code></strong>, <strong><code>n_enc_layers</code></strong>=<em><code>6</code></em>, <strong><code>n_dec_layers</code></strong>=<em><code>6</code></em>, <strong><code>n_heads</code></strong>=<em><code>8</code></em>, <strong><code>d_ff</code></strong>=<em><code>None</code></em>, <strong><code>pad_idx</code></strong>=<em><code>None</code></em>, <strong><code>tie_weights</code></strong>=<em><code>True</code></em>, <strong><code>shared_emb</code></strong>=<em><code>False</code></em>, <strong><code>attn_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>ff_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>emb_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>prenorm</code></strong>=<em><code>False</code></em>, <strong><code>attn_bias</code></strong>=<em><code>False</code></em>, <strong><code>comb_attn</code></strong>=<em><code>False</code></em>, <strong><code>pos_enc</code></strong>=<em><code>'absolute'</code></em>, <strong><code>max_seq_len</code></strong>=<em><code>512</code></em>, <strong><code>axial_shape</code></strong>=<em><code>None</code></em>, <strong><code>axial_emb_dims</code></strong>=<em><code>None</code></em>) :: <code>Module</code></p>
 </blockquote>
 <p>Basic Transformer Encoder-Decoder model
 Parameters:</p>
@@ -575,6 +575,45 @@ Parameters:</p>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Config-for-experiments">Config for experiments<a class="anchor-link" href="#Config-for-experiments"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="XConfig" class="doc_header"><code>class</code> <code>XConfig</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/xtransformer.py#L327" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>XConfig</code>(<strong><code>vocab_sz</code></strong>=<em><code>256</code></em>, <strong><code>d_model</code></strong>=<em><code>512</code></em>, <strong><code>n_layers</code></strong>=<em><code>12</code></em>, <strong><code>n_heads</code></strong>=<em><code>8</code></em>, <strong><code>attn_module</code></strong>=<em><code>Attention</code></em>, <strong><code>ff_module</code></strong>=<em><code>FeedForward</code></em>, <strong><code>d_ff</code></strong>=<em><code>None</code></em>, <strong><code>attn_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>ff_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>emb_dropout</code></strong>=<em><code>0.1</code></em>, <strong><code>tie_weights</code></strong>=<em><code>True</code></em>, <strong><code>causal</code></strong>=<em><code>True</code></em>, <strong><code>pos_enc</code></strong>=<em><code>'absolute'</code></em>, <strong><code>max_seq_len</code></strong>=<em><code>512</code></em>, <strong><code>axial_shape</code></strong>=<em><code>None</code></em>, <strong><code>axial_emb_dims</code></strong>=<em><code>None</code></em>, <strong><code>pad_idx</code></strong>=<em><code>None</code></em>, <strong><code>attn_bias</code></strong>=<em><code>False</code></em>, <strong><code>shared_qk</code></strong>=<em><code>False</code></em>, <strong><code>residual_type</code></strong>=<em><code>'postnorm'</code></em>) :: <a href="/transformers_sandbox/config.html#ConfigBase"><code>ConfigBase</code></a></p>
+</blockquote>
+<p>Config for enwik8 Experiment.
+See <a href="https://arampacha.github.io/reformer_fastai/experiment.enwik8-baseline.html">https://arampacha.github.io/reformer_fastai/experiment.enwik8-baseline.html</a> for details</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}

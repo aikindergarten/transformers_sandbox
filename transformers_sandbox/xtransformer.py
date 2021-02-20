@@ -9,7 +9,7 @@ from .core import *
 from .layers import *
 from .attention import *
 from .transformer import LMMixin, EncDecMixin
-from .config import ConfigBase
+from .config import ConfigBase, update_sig
 
 # Cell
 def wrap_sublayer(sublayer:Module, method:str, d_model):
