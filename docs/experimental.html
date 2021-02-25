@@ -65,29 +65,6 @@ nb_path: "nbs/40_experimental.ipynb"
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-5-8a129c31a21e&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg">#export</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">class</span> CharLMConfig<span class="ansi-blue-fg">(</span>ConfigBase<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span>     <span class="ansi-blue-fg">&#34;Config for quick char-level LM experiments&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     _model <span class="ansi-blue-fg">=</span> TransformerLM
-<span class="ansi-green-intense-fg ansi-bold">      5</span>     _d = {
-
-<span class="ansi-red-fg">NameError</span>: name &#39;ConfigBase&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -386,9 +363,9 @@ Basic Transformer for language modelling</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Scale" class="doc_header"><code>class</code> <code>Scale</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/experimental.py#L179" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Scale</code>(<strong><code>scale</code></strong>=<em><code>1.0</code></em>) :: <code>Module</code></p>
+<h2 id="Scale" class="doc_header"><code>class</code> <code>Scale</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/layers.py#L28" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Scale</code>(<strong><code>scale</code></strong>=<em><code>1.0</code></em>) :: <code>Module</code></p>
 </blockquote>
-<p>Same as <code>nn.Module</code>, but no need for subclasses to call <code>super().__init__</code></p>
+<p>Scales input with single coef</p>
 
 </div>
 
@@ -411,9 +388,9 @@ Basic Transformer for language modelling</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Shift" class="doc_header"><code>class</code> <code>Shift</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/experimental.py#L185" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Shift</code>() :: <code>Module</code></p>
+<h2 id="Shift" class="doc_header"><code>class</code> <code>Shift</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/layers.py#L35" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Shift</code>() :: <code>Module</code></p>
 </blockquote>
-<p>Same as <code>nn.Module</code>, but no need for subclasses to call <code>super().__init__</code></p>
+<p>Shifts input by scalar</p>
 
 </div>
 

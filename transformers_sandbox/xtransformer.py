@@ -19,6 +19,7 @@ def wrap_sublayer(sublayer:Module, method:str, d_model):
     * postnorm
     * prenorm
     * admin
+    * rezero
     * ...
     """
     if method == 'postnorm':
@@ -27,6 +28,8 @@ def wrap_sublayer(sublayer:Module, method:str, d_model):
         return Residual(PreNorm(d_model, sublayer))
     elif method == 'admin':
         raise NotImplementedError
+    elif method == 'rezero':
+        return ReZero(sublayer)
     else:
         raise NotImplementedError(f'{method} is not valid wrapping method.')
 
