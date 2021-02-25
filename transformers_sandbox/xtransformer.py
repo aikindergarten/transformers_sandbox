@@ -10,6 +10,7 @@ from .layers import *
 from .attention import *
 from .transformer import LMMixin, EncDecMixin
 from .config import ConfigBase, update_sig
+from .experimental import *
 
 # Cell
 def wrap_sublayer(sublayer:Module, method:str, d_model):
@@ -69,6 +70,8 @@ class XEncoder(Module):
                  n_layers=6,
                  n_heads=8,
                  d_ff=None,
+                 attn_module:Module=Attention,
+                 ff_module:Module=FeedForward,
                  ff_dropout=0.1,
                  attn_dropout=0.1,
                  attn_bias=False,
@@ -80,8 +83,8 @@ class XEncoder(Module):
         store_attr('d_model')
         self.layers = nn.ModuleList([])
         for _ in range(n_layers):
-            self.layers.append(XEncoderBlock(d_model, n_heads, causal=causal,
-                                    d_ff=d_ff, attn_dropout=attn_dropout, ff_dropout=ff_dropout,
+            self.layers.append(XEncoderBlock(d_model, n_heads, causal=causal, attn_module=attn_module,
+                                    d_ff=d_ff, attn_dropout=attn_dropout, ff_dropout=ff_dropout, ff_module=ff_module,
                                     residual_type=residual_type, attn_bias=attn_bias, shared_qk=shared_qk,
                                             **kwargs))
         self.norm = None if final_norm is None else final_norm(d_model)
@@ -205,6 +208,8 @@ class XTransformerLM(Module, LMMixin):
                  n_layers:int=6,
                  n_heads:int=8,
                  d_ff:int=None,
+                 attn_module:Module=Attention,
+                 ff_module:Module=FeedForward,
                  attn_dropout:float=0.1,
                  ff_dropout:float=0.1,
                  emb_dropout:float=0.1,
@@ -224,6 +229,7 @@ class XTransformerLM(Module, LMMixin):
                                         axial_emb_dims=axial_emb_dims)
         final_norm = nn.LayerNorm if (residual_type in {'prenorm'}) else None
         self.encoder = XEncoder(d_model, n_layers, n_heads, causal=causal, d_ff=d_ff,
+                                attn_module=attn_module, ff_module=ff_module,
                                 attn_dropout=attn_dropout, ff_dropout=ff_dropout,
                                 residual_type=residual_type, attn_bias=attn_bias,
                                 shared_qk=shared_qk, final_norm=final_norm)
