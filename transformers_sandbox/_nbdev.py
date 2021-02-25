@@ -118,7 +118,28 @@ index = {"exists": "00_core.ipynb",
          "NHashesConfig": "10_config.ipynb",
          "NLayersConfig": "10_config.ipynb",
          "ReversibleTransformerConfigWMT": "10_config.ipynb",
-         "TransformerConfigWMT": "10_config.ipynb"}
+         "TransformerConfigWMT": "10_config.ipynb",
+         "CharLMConfig": "40_experimental.ipynb",
+         "TransformerEncoderBlockNLN": "40_experimental.ipynb",
+         "TransformerEncoderNLN": "40_experimental.ipynb",
+         "TransformerLMNLN": "40_experimental.ipynb",
+         "fixup_init": "40_experimental.ipynb",
+         "Scale": "40_experimental.ipynb",
+         "Shift": "40_experimental.ipynb",
+         "ShiftScale": "40_experimental.ipynb",
+         "TransformerEncoderBlockNLN2": "40_experimental.ipynb",
+         "TransformerEncoderNLN2": "40_experimental.ipynb",
+         "TransformerLMNLN2": "40_experimental.ipynb",
+         "fixup_init2": "40_experimental.ipynb",
+         "AdminResidual": "40_experimental.ipynb",
+         "TransformerEncoderBlockAdmin": "40_experimental.ipynb",
+         "TransformerEncoderAdmin": "40_experimental.ipynb",
+         "TransformerLMAdmin": "40_experimental.ipynb",
+         "BreakFitCallback": "40_experimental.ipynb",
+         "res_submodules": "40_experimental.ipynb",
+         "res_modules": "40_experimental.ipynb",
+         "variances": "40_experimental.ipynb",
+         "admin_init": "40_experimental.ipynb"}
 
 modules = ["core.py",
            "layers.py",
@@ -131,7 +152,8 @@ modules = ["core.py",
            "metrics.py",
            "optimizers.py",
            "tracking.py",
-           "config.py"]
+           "config.py",
+           "experimental.py"]
 
 doc_url = "https://aikindergarten.github.io/transformers_sandbox/"
 

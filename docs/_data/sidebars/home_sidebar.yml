@@ -45,6 +45,9 @@ entries:
     - output: web,pdf
       title: Experiment Configs
       url: config.html
+    - output: web,pdf
+      title: Experimental blocks and features
+      url: experimental.html
     output: web
     title: transformers_sandbox
   output: web
