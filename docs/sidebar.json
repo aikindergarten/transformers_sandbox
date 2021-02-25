@@ -12,6 +12,7 @@
     "Metrics": "metrics.html",
     "Optimizers": "optimizers.html",
     "Tracking": "tracking.html",
-    "Experiment Configs": "config.html"
+    "Experiment Configs": "config.html",
+    "Experimental blocks and features": "experimental.html"
   }
 }
