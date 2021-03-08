@@ -1,6 +1,6 @@
 from .core import *
 from .layers import *
-from .attention import *
+from .attention.all import *
 from .data import *
 from .metrics import *
 from .tokenizers import *

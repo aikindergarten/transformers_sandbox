@@ -13,7 +13,7 @@ from functools import wraps
 from fastai.basics import *
 from .core import *
 from .layers import *
-from .attention import *
+from .attention.all import *
 from .transformer import LMMixin, EncDecMixin
 
 # Cell
@@ -321,7 +321,7 @@ class ReversibleEncoder(Module):
         blocks = []
         norm_wrapper = PreNorm if prenorm else PostNorm
         for ind in range(n_layers):
-            attn = Attention(d_model, n_heads, causal=causal, dropout=attn_dropout, out_dropout=post_attn_dropout, bias=attn_bias)
+            attn = Attention(d_model, n_heads=n_heads, causal=causal, dropout=attn_dropout, out_dropout=post_attn_dropout, bias=attn_bias)
             ff = ChunkedFeedForward(d_model, d_ff, n_chunks=ff_chunks, dropout=ff_dropout, dim=1)
 
             f = norm_wrapper(d_model, attn)
@@ -346,7 +346,7 @@ class ReversibleDecoder(Module):
     def __init__(self,
                  d_model,
                  n_layers = 6,
-                 heads = 8,
+                 n_heads = 8,
                  max_seq_len = 512,
                  d_head = None,
                  bucket_size = 64,
@@ -364,7 +364,7 @@ class ReversibleDecoder(Module):
                  ):
         store_attr('d_model,n_layers')
 
-        get_attn = lambda: AdditiveAttention(d_model, heads, causal=True, dropout=attn_dropout, out_dropout=post_attn_dropout, bias=attn_bias)
+        get_attn = lambda: AdditiveAttention(d_model, n_heads=n_heads, causal=True, dropout=attn_dropout, out_dropout=post_attn_dropout, bias=attn_bias)
         get_ff = lambda: ChunkedFeedForward(d_model, d_ff, n_chunks=ff_chunks, dropout=ff_dropout, dim=1)
         norm_wrapper = PreNorm if prenorm else PostNorm
         blocks = []
@@ -573,7 +573,7 @@ class ReversibleEncoderV2(Module):
         blocks = [RevChunk()]
         norm_wrapper = PreNorm if prenorm else PostNorm
         for ind in range(n_layers):
-            sublayer = (Attention(d_model, n_heads, causal=causal, dropout=attn_dropout, out_dropout=post_attn_dropout, bias=attn_bias)
+            sublayer = (Attention(d_model, n_heads=n_heads, causal=causal, dropout=attn_dropout, out_dropout=post_attn_dropout, bias=attn_bias)
                         if ind%2==0 else
                         ChunkedFeedForward(d_model, d_ff, n_chunks=ff_chunks, dropout=ff_dropout, dim=1))
             f = norm_wrapper(d_model, sublayer)

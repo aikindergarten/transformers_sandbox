@@ -9,7 +9,7 @@ from fastai.basics import *
 from .core import *
 from .core import _sampler
 from .layers import *
-from .attention import *
+from .attention.all import *
 
 # Cell
 class LMMixin:
@@ -176,11 +176,12 @@ class TransformerEncoderBlock(Module):
                  prenorm:bool=False,
                  shared_qk:bool=False):
         store_attr('attn_dropout') # mb separate argument attn_post_dropout
+        _proj = SharedQKAttnInProj if shared_qk else AttnInProjV2
         if prenorm:
-            self.attn = Residual(PreNorm(d_model, Attention(d_model, n_heads=n_heads, causal=causal, dropout=attn_dropout, bias=attn_bias, shared_qk=shared_qk)))
+            self.attn = Residual(PreNorm(d_model, Attention(d_model, n_heads=n_heads, proj_func=_proj, causal=causal, dropout=attn_dropout, bias=attn_bias, shared_qk=shared_qk)))
             self.ff = Residual(PreNorm(d_model, FeedForward(d_model, d_ff=d_ff, dropout=ff_dropout)))
         else:
-            self.attn = PostNorm(d_model, Residual(Attention(d_model, n_heads=n_heads, causal=causal, dropout=attn_dropout, bias=attn_bias, shared_qk=shared_qk)))
+            self.attn = PostNorm(d_model, Residual(Attention(d_model, n_heads=n_heads, proj_func=_proj, causal=causal, dropout=attn_dropout, bias=attn_bias, shared_qk=shared_qk)))
             self.ff = PostNorm(d_model, Residual(FeedForward(d_model, d_ff=d_ff, dropout=ff_dropout)))
 
     def forward(self, x, mask=None): #? more args

@@ -7,7 +7,7 @@ __all__ = ['wrap_sublayer', 'XEncoderBlock', 'XEncoder', 'XDecoderBlock', 'XDeco
 from fastai.basics import *
 from .core import *
 from .layers import *
-from .attention import *
+from .attention.all import *
 from .transformer import LMMixin, EncDecMixin
 from .config import ConfigBase, update_sig
 from .experimental import *
