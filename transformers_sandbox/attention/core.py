@@ -17,7 +17,7 @@ from operator import mul
 from copy import deepcopy
 import math
 from torch import Tensor
-from typing import Tuple, Callable, Final
+from typing import Tuple, Callable #, Final TODO add this back when move to min-python == 3.8
 
 from einops import rearrange, repeat
 
@@ -27,8 +27,8 @@ from ..layers import *
 from torch.utils.checkpoint import *
 
 # Cell
-MASK_VAL:Final = -5e4
-SELF_ATTN_MASK_VAL:Final = -1e4
+MASK_VAL = -5e4
+SELF_ATTN_MASK_VAL = -1e4
 
 # Cell
 class AttnInProj(Module):

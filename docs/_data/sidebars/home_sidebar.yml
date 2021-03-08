@@ -16,7 +16,7 @@ entries:
       title: Layers
       url: layers.html
     - output: web,pdf
-      title: 'Attention Modules '
+      title: Attention Core
       url: attention.core.html
     - output: web,pdf
       title: Standard Transformer
