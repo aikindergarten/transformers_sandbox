@@ -778,7 +778,7 @@ sequence length is &gt; rev_thres or else IrreversibleBlocks.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="ReversibleDecoder" class="doc_header"><code>class</code> <code>ReversibleDecoder</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/reformer.py#L344" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ReversibleDecoder</code>(<strong><code>d_model</code></strong>, <strong><code>n_layers</code></strong>=<em><code>6</code></em>, <strong><code>heads</code></strong>=<em><code>8</code></em>, <strong><code>max_seq_len</code></strong>=<em><code>512</code></em>, <strong><code>d_head</code></strong>=<em><code>None</code></em>, <strong><code>bucket_size</code></strong>=<em><code>64</code></em>, <strong><code>n_hashes</code></strong>=<em><code>8</code></em>, <strong><code>ff_chunks</code></strong>=<em><code>1</code></em>, <strong><code>attn_chunks</code></strong>=<em><code>None</code></em>, <strong><code>attn_dropout</code></strong>=<em><code>0.0</code></em>, <strong><code>post_attn_dropout</code></strong>=<em><code>None</code></em>, <strong><code>attn_bias</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>ff_dropout</code></strong>=<em><code>0.0</code></em>, <strong><code>d_ff</code></strong>=<em><code>None</code></em>, <strong><code>prenorm</code></strong>=<em><code>True</code></em>, <strong><code>final_norm</code></strong>:<code>Module</code>=<em><code>None</code></em>, <strong><code>rev_thres</code></strong>=<em><code>0</code></em>) :: <code>Module</code></p>
+<h2 id="ReversibleDecoder" class="doc_header"><code>class</code> <code>ReversibleDecoder</code><a href="https://github.com/aikindergarten/transformers_sandbox/tree/master/transformers_sandbox/reformer.py#L344" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ReversibleDecoder</code>(<strong><code>d_model</code></strong>, <strong><code>n_layers</code></strong>=<em><code>6</code></em>, <strong><code>n_heads</code></strong>=<em><code>8</code></em>, <strong><code>max_seq_len</code></strong>=<em><code>512</code></em>, <strong><code>d_head</code></strong>=<em><code>None</code></em>, <strong><code>bucket_size</code></strong>=<em><code>64</code></em>, <strong><code>n_hashes</code></strong>=<em><code>8</code></em>, <strong><code>ff_chunks</code></strong>=<em><code>1</code></em>, <strong><code>attn_chunks</code></strong>=<em><code>None</code></em>, <strong><code>attn_dropout</code></strong>=<em><code>0.0</code></em>, <strong><code>post_attn_dropout</code></strong>=<em><code>None</code></em>, <strong><code>attn_bias</code></strong>:<code>bool</code>=<em><code>False</code></em>, <strong><code>ff_dropout</code></strong>=<em><code>0.0</code></em>, <strong><code>d_ff</code></strong>=<em><code>None</code></em>, <strong><code>prenorm</code></strong>=<em><code>True</code></em>, <strong><code>final_norm</code></strong>:<code>Module</code>=<em><code>None</code></em>, <strong><code>rev_thres</code></strong>=<em><code>0</code></em>) :: <code>Module</code></p>
 </blockquote>
 <p>Stack of ReversibleBlocks. Uses AdditiveAttention.</p>
 
@@ -1560,7 +1560,7 @@ Parameters:</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>318 ms ± 23 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>296 ms ± 22.5 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -1594,7 +1594,7 @@ Parameters:</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>8.17 ms ± 523 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<pre>7.77 ms ± 562 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre>
 </div>
 </div>
@@ -1810,15 +1810,15 @@ Parameters:</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;buckets:0&#39;: tensor([[ 1,  1,  0,  ..., 14, 14, 14],
-        [ 1,  1,  0,  ..., 14, 14, 15],
-        [ 1,  1,  0,  ..., 14, 14, 15],
-        [ 1,  1,  0,  ..., 14, 14, 14]])}
+<pre>{&#39;buckets:0&#39;: tensor([[ 0,  1,  1,  ..., 14, 14, 14],
+        [ 1,  1,  1,  ..., 14, 14, 14],
+        [ 0,  1,  1,  ..., 14, 14, 15],
+        [ 1,  1,  1,  ..., 14, 14, 15]])}
 torch.Size([4, 1024])
-{&#39;buckets:1&#39;: tensor([[ 1,  1,  0,  ..., 15, 15, 15],
-        [ 0,  0,  0,  ..., 15, 15, 14],
-        [ 0,  1,  1,  ..., 14, 15, 14],
-        [ 0,  1,  1,  ..., 15, 15, 15]])}
+{&#39;buckets:1&#39;: tensor([[ 1,  1,  1,  ..., 14, 14, 15],
+        [ 1,  1,  1,  ..., 15, 15, 15],
+        [ 1,  1,  1,  ..., 14, 14, 15],
+        [ 1,  1,  1,  ..., 15, 14, 15]])}
 torch.Size([4, 1024])
 </pre>
 </div>
@@ -1832,7 +1832,7 @@ torch.Size([4, 1024])
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="/transformers_sandbox/attention.html#LSHAttention"><code>LSHAttention</code></a> execution time depends on number of hashing rounds</p>
+<p><a href="/transformers_sandbox/attention.core.html#LSHAttention"><code>LSHAttention</code></a> execution time depends on number of hashing rounds</p>
 
 </div>
 </div>
@@ -1859,7 +1859,7 @@ torch.Size([4, 1024])
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Number of hashing rounds 8
-280 ms ± 15.6 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+276 ms ± 7.03 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -1893,7 +1893,7 @@ torch.Size([4, 1024])
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Number of hashing rounds 1
-85.2 ms ± 5.25 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+73.4 ms ± 476 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre>
 </div>
 </div>
