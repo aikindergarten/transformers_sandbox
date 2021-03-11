@@ -40,7 +40,7 @@ class NystromAttention(Module):
     """Computes attention using nystrom aproximation based approach"""
     def __init__(self, d_model, n_heads=8, causal=False, n_landmarks=64,
                  store_attention:bool=False, use_conv=False, dropout=0.,
-                 pinv_n_iter=6, conv_kernel_size=33, **kwargs):
+                 pinv_n_iter=6, conv_kernel_size=33, **kwargs): #TODO: resolve kwargs thing
         store_attr()
         self.scale = (d_model//n_heads)**-0.5
         if use_conv:
@@ -63,8 +63,12 @@ class NystromAttention(Module):
                 del attn_mask
             out = einsum('...nm, ...md -> ...nd', dots, v)
 
-        ql = torch.reshape(q, (bs, h, l, -1, dh)).mean(dim=-2)
-        kl = torch.reshape(k, (bs, h, l, -1, dh)).mean(dim=-2)
+        #?? do we need to consider case when context is given
+        if attn_mask is None: attn_mask = torch.ones(bs, n).reshape(bs, l, -1)
+
+        ql = torch.reshape(q, (bs, h, l, -1, dh)).sum(dim=-2) / attn_mask.sum(-1).unsqueeze(-1)
+        kl = torch.reshape(k, (bs, h, l, -1, dh)).sum(dim=-2) / attn_mask.sum(-1).unsqueeze(-1)
+        del attn_mask
 
         f = F.softmax(einsum('...nd, ...md -> ...nm', q *self.scale, kl), dim=-1)
         b = F.softmax(einsum('...md, ...nd -> ...mn', ql*self.scale, k ), dim=-1)
