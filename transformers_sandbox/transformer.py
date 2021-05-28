@@ -38,7 +38,7 @@ class LMMixin:
             if method == 'greedy':
                 sample = sampler(logits)
             else:
-                filtered_logits = sampler(logits)
+                filtered_logits = sampler(logits, thresh)
                 probs = F.softmax(filtered_logits / temperature, dim=-1)
                 sample = torch.multinomial(probs, 1)
 
