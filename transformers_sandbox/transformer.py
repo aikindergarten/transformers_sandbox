@@ -451,19 +451,19 @@ class Transformer(Module, EncDecMixin):
                  axial_emb_dims=None):
         d_emb = ifnone(d_emb, d_model)
         store_attr()
-        self.enc_emb = TransformerEmbedding(enc_vocab_sz, d_model, max_seq_len, dropout=emb_dropout, pos_enc=pos_enc,
+        self.enc_emb = TransformerEmbedding(enc_vocab_sz, d_emb, max_seq_len, dropout=emb_dropout, pos_enc=pos_enc,
                                             axial_shape=axial_shape, axial_emb_dims=axial_emb_dims)
         if shared_emb:
             assert (enc_vocab_sz == dec_vocab_sz), "Encoder and decoder vocab size doesn't match"
             self.dec_emb = self.enc_emb
         else:
-            self.dec_emb = TransformerEmbedding(dec_vocab_sz, d_model, max_seq_len, dropout=emb_dropout, pos_enc=pos_enc,
+            self.dec_emb = TransformerEmbedding(dec_vocab_sz, d_emb, max_seq_len, dropout=emb_dropout, pos_enc=pos_enc,
                                                 axial_shape=axial_shape, axial_emb_dims=axial_emb_dims)
         final_norm = nn.LayerNorm if prenorm else None
         self.encoder = TransformerEncoder(d_model, n_enc_layers, n_heads, d_ff=d_ff, attn_dropout=attn_dropout, ff_dropout=ff_dropout,
                                           prenorm=prenorm, attn_bias=attn_bias, final_norm=final_norm, causal=False, d_emb=d_emb)
         self.decoder = TransformerDecoder(d_model, n_dec_layers, n_heads, d_ff=d_ff, attn_dropout=attn_dropout, ff_dropout=ff_dropout,
-                                          prenorm=prenorm, comb_attn=comb_attn, attn_bias=attn_bias, final_norm=final_norm, )
+                                          prenorm=prenorm, comb_attn=comb_attn, attn_bias=attn_bias, final_norm=final_norm, d_emb=d_emb)
         self.emb_out_proj = Identity() if d_emb==d_model else nn.Linear(d_model, d_emb)
         self.proj = nn.Linear(d_model, dec_vocab_sz)
         if tie_weights: self.proj.weight = self.dec_emb.emb.weight
